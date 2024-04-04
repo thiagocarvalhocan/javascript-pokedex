@@ -55,6 +55,7 @@ button {
   position: fixed;
   top: 0.8rem;
   left: calc(50% - 50%);
+  z-index: 10;
 }
 
 @media screen and (min-width: 992px) {

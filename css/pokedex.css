@@ -59,8 +59,8 @@
   display: grid;
   grid-template-columns: 1fr;
   list-style: none;
-  margin: 0;
-  padding: 63px 0;
+  margin: -8px;
+  padding: 95px 0;
 }
 
 .pokemon {
