@@ -10,7 +10,7 @@ function loadPokemonDetail(offset, limit) {
     const newHtml = pokemons
       .map(
         (pokemon) => `
-        <a href="details.html?id=${pokemon.id}" target="blank">
+        <a href="details.html?id=${pokemon.id}" >
         <li class="pokemon ${pokemon.type}">
         <span class="number">#${pokemon.id}</span>
         <span class="name">${pokemon.name}</span>
