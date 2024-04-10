@@ -23,9 +23,9 @@ button {
     0 0 8px rgb(255, 255, 255) inset;
 }
 .content {
-  width: 90%;
+  width: 95%;
   height: 85%;
-  padding: 1rem;
+  padding: 0.5rem;
   border-radius: 1rem;
   background-color: rgba(6, 6, 6, 0.6);
   margin: auto;

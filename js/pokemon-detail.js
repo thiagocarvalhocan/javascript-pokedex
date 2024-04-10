@@ -5,13 +5,15 @@ const detailedPokemon = document.getElementById("detailExpanded"); //Locating an
 
 function convertPokemonDetailsToLi(details) {
   //Dynamic background using "classList.add" to access the class style at the CSS;
-  detailedPokemon.classList.add(details.types[0].type.name);
+  //detailedPokemon.classList.add(details.types[0].type.name);
 
   detailedPokemon.innerHTML = `
-  <li class="pokemon">
-    <span id="goBack"><a href="index.html"><img class="Click to go back" src=".\\img\\goback.png"></a></span>
+  <li class="pokemon ${details.types[0].type.name} "> 
+    <span id="goBack" class="teste"><a href="index.html">
+    <img  src=".\\img\\goback.png" alt="Click to go back"></a></span>
+    <span class="number teste">#${details.id}</span>
     <span class="name">${details.name}</span>
-    <span class="number">#${details.id}</span>
+    
     <div class="detail">
       <ol class="typesDetail">
         ${details.types
@@ -183,5 +185,8 @@ fetch(urlWithId)
     convertPokemonDetailsToLi(convertedResponse);
   })
   .catch((error) =>
-    console.error("Something went wrong getting Pokémon data: ", error)
+    console.error(
+      "Something went wrong getting Pokémon data from the API: ",
+      error
+    )
   );
