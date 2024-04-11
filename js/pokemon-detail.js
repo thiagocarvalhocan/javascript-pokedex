@@ -9,9 +9,14 @@ function convertPokemonDetailsToLi(details) {
 
   detailedPokemon.innerHTML = `
   <li class="pokemon ${details.types[0].type.name} "> 
-    <span id="goBack" class="teste"><a href="index.html">
-    <img  src=".\\img\\goback.png" alt="Click to go back"></a></span>
-    <span class="number teste">#${details.id}</span>
+    <span id="goBack"><a href="index.html">
+      <img  src=".\\img\\goback.png" alt="Click to go back"></a>
+    </span>
+    <div class="navigation">
+    <div>prev</div>
+    <div>next</div>
+    </div>
+    <span class="number">#${details.id}</span>
     <span class="name">${details.name}</span>
     
     <div class="detail">
