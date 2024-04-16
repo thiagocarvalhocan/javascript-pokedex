@@ -17,11 +17,6 @@ a {
   text-decoration: none;
 }
 
-button {
-  border: 3px goldenrod;
-  box-shadow: 0 0 4px rgb(255, 255, 255), 0 0 8px rgb(237, 222, 3),
-    0 0 8px rgb(255, 255, 255) inset;
-}
 .content {
   width: 95%;
   height: 85%;

@@ -1,5 +1,5 @@
 const urlParameters = new URLSearchParams(window.location.search);
-const pokemonId = urlParameters.get("id");
+let pokemonId = urlParameters.get("id");
 const urlWithId = "https://pokeapi.co/api/v2/pokemon/" + pokemonId;
 const detailedPokemon = document.getElementById("detailExpanded"); //Locating and defining where the dynamic HTML goes
 
@@ -13,8 +13,8 @@ function convertPokemonDetailsToLi(details) {
       <img  src=".\\img\\goback.png" alt="Click to go back"></a>
     </span>
     <div class="navigation">
-    <div>prev</div>
-    <div>next</div>
+    <button id="prevButton" onclick="loadPrevPokemon()" type="button">prev</button>
+    <button id="nextButton" onclick="loadNextPokemon()" type="button">next</button>
     </div>
     <span class="number">#${details.id}</span>
     <span class="name">${details.name}</span>
@@ -184,14 +184,35 @@ function convertPokemonDetailsToLi(details) {
 `;
 }
 
-fetch(urlWithId)
-  .then((response) => response.json())
-  .then((convertedResponse) => {
-    convertPokemonDetailsToLi(convertedResponse);
-  })
-  .catch((error) =>
-    console.error(
-      "Something went wrong getting Pokémon data from the API: ",
-      error
-    )
-  );
+// Function to fetch Pokémon details
+function fetchPokemonDetails(url) {
+  fetch(url)
+    .then((response) => response.json())
+    .then((convertedResponse) => {
+      convertPokemonDetailsToLi(convertedResponse);
+    })
+    .catch((error) =>
+      console.error(
+        "Something went wrong getting Pokémon data from the API: ",
+        error
+      )
+    );
+}
+
+// Initial fetch for the Pokémon details
+fetchPokemonDetails(urlWithId);
+
+//Load Previous/Next Pokemon through the button click
+function loadPrevPokemon() {
+  const prevPokemonId = parseInt(pokemonId) - 1;
+  pokemonId = prevPokemonId;
+  const prevUrlWithId = "https://pokeapi.co/api/v2/pokemon/" + prevPokemonId;
+  fetchPokemonDetails(prevUrlWithId);
+}
+
+function loadNextPokemon() {
+  const nextPokemonId = parseInt(pokemonId) + 1;
+  pokemonId = nextPokemonId;
+  const nextUrlWithId = "https://pokeapi.co/api/v2/pokemon/" + nextPokemonId;
+  fetchPokemonDetails(nextUrlWithId);
+}
