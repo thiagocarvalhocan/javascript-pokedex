@@ -212,16 +212,16 @@ fetchPokemonDetails(urlWithId);
 function loadPrevPokemon() {
   const prevPokemonId = parseInt(pokemonId) - 1;
   pokemonId = prevPokemonId;
-  const prevUrlWithId = "https://pokeapi.co/api/v2/pokemon/" + prevPokemonId;
+  const prevUrlWithId = `https://pokeapi.co/api/v2/pokemon/${prevPokemonId}`;
   fetchPokemonDetails(prevUrlWithId);
 
-  history.pushState(null, "", `?id=${prevPokemonId}`);
+  history.pushState({id: prevPokemonId}, "", `?id=${prevPokemonId}`);
 }
 
 function loadNextPokemon() {
   const nextPokemonId = parseInt(pokemonId) + 1;
   pokemonId = nextPokemonId;
-  const nextUrlWithId = "https://pokeapi.co/api/v2/pokemon/" + nextPokemonId;
+  const nextUrlWithId = `https://pokeapi.co/api/v2/pokemon/${nextPokemonId}`;
   fetchPokemonDetails(nextUrlWithId);
 
   history.pushState({id: nextPokemonId}, "", `?id=${nextPokemonId}`);

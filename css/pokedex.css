@@ -81,6 +81,8 @@
   max-width: 30%;
   width: 35px;
   margin-bottom: 0.4rem;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #fff, 0 0 15px #ffffff inset;
 }
 .chosenPokemon .pokemon .navigation {
   display: flex;
