@@ -4,9 +4,6 @@ const urlWithId = "https://pokeapi.co/api/v2/pokemon/" + pokemonId;
 const detailedPokemon = document.getElementById("detailExpanded"); //Locating and defining where the dynamic HTML goes
 
 function convertPokemonDetailsToLi(details) {
-  //Dynamic background using "classList.add" to access the class style at the CSS;
-  //detailedPokemon.classList.add(details.types[0].type.name);
-
   detailedPokemon.innerHTML = `
   <li class="pokemon ${details.types[0].type.name} "> 
     <span id="goBack"><a href="index.html">
@@ -184,6 +181,15 @@ function convertPokemonDetailsToLi(details) {
 `;
 }
 
+// Function to handle popstate event window Back/Forward
+window.onpopstate = function (event) {
+  if (event.state) {
+    pokemonId = event.state.id; // Update the pokemonId variable with the ID from the state
+    // Fetch Pokemon details based on the updated ID
+    fetchPokemonDetails(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
+  }
+};
+
 // Function to fetch Pokémon details
 function fetchPokemonDetails(url) {
   fetch(url)
@@ -199,7 +205,7 @@ function fetchPokemonDetails(url) {
     );
 }
 
-// Initial fetch for the Pokémon details
+// Initial fetch for the Pokémon details based on the Id from the original list of Pokémons.
 fetchPokemonDetails(urlWithId);
 
 //Load Previous/Next Pokemon through the button click
@@ -208,6 +214,8 @@ function loadPrevPokemon() {
   pokemonId = prevPokemonId;
   const prevUrlWithId = "https://pokeapi.co/api/v2/pokemon/" + prevPokemonId;
   fetchPokemonDetails(prevUrlWithId);
+
+  history.pushState(null, "", `?id=${prevPokemonId}`);
 }
 
 function loadNextPokemon() {
@@ -215,4 +223,6 @@ function loadNextPokemon() {
   pokemonId = nextPokemonId;
   const nextUrlWithId = "https://pokeapi.co/api/v2/pokemon/" + nextPokemonId;
   fetchPokemonDetails(nextUrlWithId);
+
+  history.pushState({id: nextPokemonId}, "", `?id=${nextPokemonId}`);
 }
