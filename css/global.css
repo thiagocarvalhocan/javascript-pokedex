@@ -29,14 +29,19 @@ a {
 }
 
 .content .pokeTitle h1 {
-  padding: 30px;
+  padding: 31px;
+  margin: auto;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  display: block;
+}
+.content .pokeTitle a {
+  padding: 1rem 2.1rem;
   margin: auto;
   text-align: center;
   color: rgb(255, 255, 255);
   text-shadow: 0px 0px 3px #011539, 0 -1px 2px #9be1ff, 0 -1px 0px #fafdff;
-  display: block;
 }
-
 .pokeTitle {
   margin: auto;
   border-radius: 1rem;
