@@ -6,8 +6,13 @@ const detailedPokemon = document.getElementById("detailExpanded"); //Locating an
 function convertPokemonDetailsToLi(details) {
   detailedPokemon.innerHTML = `
   <li class="pokemon ${details.types[0].type.name} "> 
-    <span id="goBack"><a href="index.html">
-      <img  src=".\\img\\goback.png" alt="Click to go back"></a>
+    <span id="goBack">
+      <a href="index.html">
+      <img  src=".\\img\\goback.png" alt="Click to go back">
+      </a>
+      <a>
+        <img src=".\\img\\pokeball.png">
+      </a>
     </span>
     <div class="navigation">
     <button id="prevButton" onclick="loadPrevPokemon()" type="button">prev</button>

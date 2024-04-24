@@ -54,6 +54,15 @@
   background-color: #d685ad;
 }
 /*End of Background colors*/
+#goBack {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#pokeball {
+}
+
 .pagination > button {
   border: 3px goldenrod;
   box-shadow: 0 0 4px rgb(255, 255, 255), 0 0 8px rgb(237, 222, 3),
@@ -78,7 +87,7 @@
 }
 
 .pokemon a img {
-  max-width: 30%;
+  max-width: 100%;
   width: 35px;
   margin-bottom: 0.4rem;
   border-radius: 50%;
