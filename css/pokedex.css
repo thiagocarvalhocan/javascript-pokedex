@@ -61,6 +61,7 @@
 }
 
 #pokeball {
+  padding: 0;
 }
 
 .pagination > button {
@@ -78,7 +79,7 @@
 
 .pokemon {
   margin: 0.5rem;
-  padding: 1rem 1rem;
+  padding: 0.8rem 0.8rem;
   color: white;
   border-radius: 1rem;
   display: flex;
@@ -89,49 +90,11 @@
 .pokemon a img {
   max-width: 100%;
   width: 35px;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.2rem;
   border-radius: 50%;
   box-shadow: 0 0 5px #fff, 0 0 15px #ffffff inset;
 }
-.chosenPokemon .pokemon .navigation {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  border: none;
-}
-.chosenPokemon .pokemon .navigation button:nth-of-type(1) {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: -12px;
-  border: none;
-  text-shadow: 0 0 20px #037eb8, 0 0 10px #86d9ff, 0 0 2px #000, 0 0 1px #000;
-  background-color: #00808b;
-  background: url("../../img/arrowL.png") no-repeat;
-  background-position: center;
-  background-size: 110px;
-  width: 110px;
-  height: 55px;
-  font-size: 1.2rem;
-  color: #ffffff;
-  opacity: 0.9;
-}
-.chosenPokemon .pokemon .navigation button:nth-of-type(2) {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: -12px;
-  border: none;
-  text-shadow: 0 0 20px #037eb8, 0 0 10px #86d9ff, 0 0 2px #000, 0 0 1px #000;
-  background: url("../../img/arrowR.png") no-repeat;
-  background-position: center;
-  background-size: 110px;
-  width: 110px;
-  height: 55px;
-  font-size: 1.2rem;
-  color: #ffffff;
-  opacity: 0.9;
-}
+
 .pokemon .number {
   color: #000;
   opacity: 0.3;
@@ -191,27 +154,69 @@
 }
 
 .chosenPokemon {
-  margin-top: 6rem;
+  margin-top: 5.5rem;
   padding: 0rem;
   color: #fff;
   display: flex;
   flex-direction: column;
 }
 
+.chosenPokemon .pokemon .navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: none;
+}
+
+.chosenPokemon .pokemon .navigation button:nth-of-type(1) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -12px;
+  border: none;
+  text-shadow: 0 0 20px #037eb8, 0 0 10px #86d9ff, 0 0 2px #000, 0 0 1px #000;
+  background-color: #00808b;
+  background: url("../../img/arrowL.png") no-repeat;
+  background-position: center;
+  background-size: 110px;
+  width: 110px;
+  height: 55px;
+  font-size: 1.2rem;
+  color: #ffffff;
+  opacity: 0.9;
+}
+
+.chosenPokemon .pokemon .navigation button:nth-of-type(2) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: -12px;
+  border: none;
+  text-shadow: 0 0 20px #037eb8, 0 0 10px #86d9ff, 0 0 2px #000, 0 0 1px #000;
+  background: url("../../img/arrowR.png") no-repeat;
+  background-position: center;
+  background-size: 110px;
+  width: 110px;
+  height: 55px;
+  font-size: 1.2rem;
+  color: #ffffff;
+  opacity: 0.9;
+}
+
 .chosenPokemon .number {
   color: #fff;
   opacity: 0.8;
   text-align: center;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   text-shadow: 0 0 3px #000, 2px 2px 3px #9be1ff, -2px -2px 5px #9be1ff;
 }
 
 .chosenPokemon .name {
   color: #fff;
-  padding-bottom: 1rem;
+  padding-bottom: 0.9rem;
   margin: auto;
   text-transform: capitalize; /*first letter Upper Case*/
-  font-size: 2rem;
+  font-size: 1.8rem;
   text-shadow: 0 0 3px #000, 2px 2px 7px #9be1ff, -2px -2px 7px #9be1ff;
 }
 
@@ -227,16 +232,30 @@
   opacity: 90%;
   border-radius: 2rem;
   color: #000;
-  box-shadow: 0 4px 8px 0 rgb(10, 10, 10), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgb(10, 10, 10), 0 6px 20px 0 rgba(0, 0, 0, 0.19),
+    0 0 10px #037eb8cc inset;
 }
 .chosenPokemon .pokemon .img_background img {
   margin: auto;
-  padding: 0.4rem;
+  padding: 0.5rem;
   max-width: 100%;
   width: 220px;
   height: auto;
   display: block;
 }
+
+.chosenPokemon .pokemon .pad {
+  background-color: #00000034;
+  border-radius: 50%;
+  max-width: 60%;
+  min-width: 170px;
+  padding: 1rem 1rem;
+  margin: auto;
+  margin-bottom: 0.4rem;
+  box-shadow: 0 0 20px #fff, 0 0 10px #fff, 0 -15px 30px #ffffffcc,
+    0 -20px 50px #fff, 0 0 15px #fff inset, 0 10px 20px #f1ed029c inset;
+}
+
 .statusDesc {
   display: flex;
   flex-direction: row;

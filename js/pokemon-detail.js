@@ -32,11 +32,13 @@ function convertPokemonDetailsToLi(details) {
       </ol>
       
     </div>
-    <div class="img_background">
-      <img id="photo" src="${
-        details.sprites.other.dream_world.front_default
-      }" alt="${details.name}">
-    </div>
+      <div class="img_background">
+        <img id="photo" src="${
+          details.sprites.other.dream_world.front_default
+        }" alt="${details.name}">
+      </div>
+      <div class="pad">
+      </div>
     <div class="detail ">
       <div id="morePokemonInfo" class="moreDetails box">
 

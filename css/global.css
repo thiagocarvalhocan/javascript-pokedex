@@ -53,7 +53,7 @@ a {
   height: 100px;
   width: 100%;
   position: fixed;
-  top: 0.8rem;
+  top: 0.3rem;
   left: calc(50% - 50%);
   z-index: 10;
 }
@@ -62,7 +62,12 @@ a {
   .content {
     max-width: 992px;
     height: auto;
-    margin: 1rem auto;
-    border-radius: 1rem;
+    margin: 1% auto;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .pokeTitle {
+    top: 0.1rem;
   }
 }
